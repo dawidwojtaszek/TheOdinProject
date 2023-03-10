@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="./css/main.css" />
     <title>Library Project</title>
   </head>
-  <body>
-    <header class="w=full bg-darkBlue h-[100px]">
+  <body class="dark:bg-darkGray">
+    <header class="w=full bg-darkBlue h-[100px] dark:bg-darkGray">
       <div
         class="container mx-auto h-full px-7 flex items-center justify-between"
         role="none presentation"
@@ -34,6 +34,52 @@
         </button>
       </div>
     </header>
+    <div class="container mx-auto flex justify-between items-center mt-5 px-7">
+      <nav class="flex w-[250px] justify-between dark:text-white">
+        <button class="hover:text-green">All Books</button>
+        <button class="hover:text-green">Read</button>
+        <button class="hover:text-green">Not Read</button>
+      </nav>
+      <button class="bg-green font-medium py-2 px-6 dark:text-white">
+        <i class="fa-solid fa-circle-plus"></i> Add Book
+      </button>
+    </div>
+    <div
+      class="container mx-auto px-7 flex flex-col items-center gap-5 flex-wrap mt-10 md:justify-between md:flex-row"
+      role="none presentation"
+    >
+      <!-- Card -->
+      <div
+        class="w-[250px] min-h-[320px] px-3 pt-6 pb-2 border-4 border-darkBlue shadow-md relative dark:bg-lightGray dark:text-white dark:border-white"
+      >
+        <div
+          class="absolute h-7 px-2 bg-green top-[-16px] left-2 font-medium flex items-center"
+        >
+          Read
+        </div>
+        <div class="border-b-2 border-veryLightGray py-2">
+          <span>Title:</span>
+          <p class="font-bold text-darkBlue dark:text-white">Atomic Habit</p>
+        </div>
+        <div class="border-b-2 border-veryLightGray py-2">
+          <span>Author:</span>
+          <p class="font-bold text-darkBlue dark:text-white">James Clear</p>
+        </div>
+        <div class="border-b-2 border-veryLightGray py-2">
+          <span>Pages:</span>
+          <p class="font-bold text-darkBlue dark:text-white">200</p>
+        </div>
+        <div class="py-2 flex justify-between w-full items-center">
+          <label>Have you read it?</label>
+          <input type="checkbox" class="h-5 w-5" />
+        </div>
+        <button
+          class="border-2 border-magenta text-magenta w-full py-1 hover:bg-magenta hover:text-black dark:hover:text-white"
+        >
+          <i class="fa-solid fa-trash"></i> Remove
+        </button>
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
