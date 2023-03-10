@@ -1,23 +1,20 @@
-// Konsturktor
-
-function Person(name, sureName) {
+function Book(name, author, pages, isRead) {
   this.name = name;
-  this.sureName = sureName;
+  this.author = author;
+  this.pages = pages;
+  this.isRead = isRead;
 }
 
-Person.prototype.sayHello = function () {
-  return `hello ${this.name} ${this.sureName}`;
+Book.prototype.changeIsRead = function () {
+  this.isRead = !this.isRead;
 };
 
-const john = new Person("John", "Doe");
+//  DARK MODE TOGGLE
 
-function Costumer(name, sureName, membership) {
-  Person.call(this, name, sureName);
-  this.membership = membership;
-}
+const htmlTag = document.getElementsByTagName("html");
+const toggleBtn = document.getElementById("toggleDarkMode");
 
-Costumer.prototype = Object.create(Person.prototype);
-
-const consumer1 = new Costumer("joga", "bonito", "standard");
-
-console.log(consumer1.sayHello());
+toggleBtn.addEventListener("click", (e) => {
+  htmlTag[0].classList.toggle("dark");
+  e.preventDefault();
+});
