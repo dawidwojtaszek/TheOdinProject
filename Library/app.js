@@ -6,6 +6,22 @@ let bookList = [
     isRead: true,
   },
 ];
+// Book constructor
+function Book(name, author, pages, isRead) {
+  this.title = name;
+  this.author = author;
+  this.pages = pages;
+  this.isRead = isRead;
+}
+// Book PROTOTYPE
+Book.prototype.changeIsRead = function () {
+  this.isRead = !this.isRead;
+};
+
+// add book to list
+function addBook(book) {
+  bookList.push(book);
+}
 
 // Card Component
 function infoBox(p, a) {
@@ -68,17 +84,6 @@ function renderBookList(bookList) {
 
 renderBookList(bookList);
 
-function Book(name, author, pages, isRead) {
-  this.title = name;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
-}
-
-Book.prototype.changeIsRead = function () {
-  this.isRead = !this.isRead;
-};
-
 //  DARK MODE TOGGLE
 
 const htmlTag = document.getElementsByTagName("html");
@@ -86,5 +91,41 @@ const toggleBtn = document.getElementById("toggleDarkMode");
 
 toggleBtn.addEventListener("click", (e) => {
   htmlTag[0].classList.toggle("dark");
+  e.preventDefault();
+});
+
+// MODAL
+
+function closeModal() {
+  const modal = document.getElementById("modal");
+  modal.classList.add("closeModal");
+}
+
+function openModal() {
+  const modal = document.getElementById("modal");
+  modal.classList.remove("closeModal");
+}
+
+const addBookBtn = document.getElementById("addBookBtn");
+addBookBtn.addEventListener("click", (e) => {
+  openModal();
+  e.preventDefault();
+});
+const modal = document.getElementById("modal");
+modal.addEventListener("click", (e) => {
+  if (e.target.classList.contains("closeModalClick")) {
+    closeModal();
+  }
+});
+
+const addBookForm = document.getElementById("addBookForm");
+addBookForm.addEventListener("submit", (e) => {
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const read = document.getElementById("read").checked;
+
+  const book = new Book(title, author, pages, read);
+  addBook(book);
   e.preventDefault();
 });

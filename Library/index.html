@@ -34,52 +34,90 @@
         </button>
       </div>
     </header>
+    <!-- Modal -->
+    <div
+      class="fixed top-0 left-0 bottom-0 right-0 bg-modalBackground z-10 flex items-center justify-center closeModal closeModalClick"
+      id="modal"
+      aria-hidden="true"
+    >
+      <div class="w-[300px] min-h-[400px] p-5 bg-white">
+        <div class="flex justify-end w-full">
+          <button class="text-3xl closeModalClick">
+            <i class="fa-solid fa-xmark closeModalClick"></i>
+          </button>
+        </div>
+        <div>
+          <form id="addBookForm">
+            <label
+              for="title"
+              class="block mb-2 mt-3 text-sm font-medium text-gray-900 dark:text-white"
+              >Title</label
+            >
+            <input
+              type="text"
+              id="title"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Title"
+              required
+            />
+            <label
+              for="author"
+              class="block mb-2 mt-3 text-sm font-medium text-gray-900 dark:text-white"
+              >Author</label
+            >
+            <input
+              type="text"
+              id="author"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Author"
+              required
+            />
+            <label
+              for="pages"
+              class="block mb-2 mt-3 text-sm font-medium text-gray-900 dark:text-white"
+              >Pages</label
+            >
+            <input
+              type="number"
+              id="pages"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Pages"
+              required
+            />
+            <div class="flex justify-between items-center w-full p-2.5 mt-3">
+              <label
+                for="read"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Have you read it?</label
+              >
+              <input type="checkbox" id="read" class="h-5 w-5" />
+            </div>
+            <button type="submit" class="w-full bg-green py-3 mt-3">
+              <i class="fa-solid fa-circle-plus"></i> Add book
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
     <div class="container mx-auto flex justify-between items-center mt-5 px-7">
       <nav class="flex w-[250px] justify-between dark:text-white">
         <button class="hover:text-green">All Books</button>
         <button class="hover:text-green">Read</button>
         <button class="hover:text-green">Not Read</button>
       </nav>
-      <button class="bg-green font-medium py-2 px-6 dark:text-white">
+      <button
+        class="bg-green font-medium py-2 px-6 dark:text-white"
+        id="addBookBtn"
+      >
         <i class="fa-solid fa-circle-plus"></i> Add Book
       </button>
     </div>
     <div
-      class="container mx-auto px-7 flex flex-col items-center gap-5 flex-wrap mt-10 md:justify-between md:flex-row"
+      class="container mx-auto px-7 flex flex-col items-center gap-y-20 gap-x-[57px] flex-wrap my-10 md:justify-start md:flex-row"
       role="none presentation"
       id="cardsList"
     >
       <!-- Card -->
-      <!-- <div
-        class="w-[250px] min-h-[320px] px-3 pt-6 pb-2 border-4 border-darkBlue shadow-md relative dark:bg-lightGray dark:text-white dark:border-white"
-      >
-        <div
-          class="absolute h-7 px-2 bg-green top-[-16px] left-2 font-medium flex items-center"
-        >
-          Read
-        </div>
-        <div class="border-b-2 border-veryLightGray py-2">
-          <span>Title:</span>
-          <p class="font-bold text-darkBlue dark:text-white">Atomic Habit</p>
-        </div>
-        <div class="border-b-2 border-veryLightGray py-2">
-          <span>Author:</span>
-          <p class="font-bold text-darkBlue dark:text-white">James Clear</p>
-        </div>
-        <div class="border-b-2 border-veryLightGray py-2">
-          <span>Pages:</span>
-          <p class="font-bold text-darkBlue dark:text-white">200</p>
-        </div>
-        <div class="py-2 flex justify-between w-full items-center">
-          <label>Have you read it?</label>
-          <input type="checkbox" class="h-5 w-5" />
-        </div>
-        <button
-          class="border-2 border-magenta text-magenta w-full py-1 hover:bg-magenta hover:text-black dark:hover:text-white"
-        >
-          <i class="fa-solid fa-trash"></i> Remove
-        </button>
-      </div> -->
     </div>
     <script src="app.js"></script>
   </body>

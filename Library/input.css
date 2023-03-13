@@ -12,3 +12,6 @@ body {
 .notRead {
   background-color: #f39237;
 }
+.closeModal {
+  display: none;
+}

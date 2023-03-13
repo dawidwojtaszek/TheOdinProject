@@ -12,6 +12,7 @@ module.exports = {
       veryLightGray: "#D9D9D9",
       lightGray: "#474649",
       darkGray: "#363537",
+      modalBackground: "rgba(43,65,98,0.75)",
     },
     extend: {},
   },
