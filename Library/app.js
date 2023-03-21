@@ -6,6 +6,7 @@ let bookList = [
     isRead: true,
   },
 ];
+
 // Book constructor
 function Book(name, author, pages, isRead) {
   this.title = name;
@@ -127,5 +128,6 @@ addBookForm.addEventListener("submit", (e) => {
 
   const book = new Book(title, author, pages, read);
   addBook(book);
+  console.log("dodddddd");
   e.preventDefault();
 });
