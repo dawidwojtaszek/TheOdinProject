@@ -5,6 +5,18 @@ let bookList = [
     pages: 200,
     isRead: true,
   },
+  {
+    title: "Atomic habits",
+    author: "James Clear",
+    pages: 200,
+    isRead: true,
+  },
+  {
+    title: "Atomic habits",
+    author: "James Clear",
+    pages: 200,
+    isRead: true,
+  },
 ];
 
 // Book constructor
